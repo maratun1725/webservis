@@ -10,7 +10,7 @@ class MahasiswaController extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model ('MahasiswaModel');
+        $this->load->model('MahasiswaModel');
     }
 
 
@@ -43,7 +43,7 @@ class MahasiswaController extends CI_Controller
                         'nama'      => $this->input->post('nama'),
                         'email'     => $this->input->post('email'),
                         'kelas'     => $this->input->post('kelas'),
-                        'jurusan'   => $this->input->post('jurusan'),            
+                        'jurusan'   => $this->input->post('jurusan')         
                     ];
 
         $data = $this->MahasiswaModel->insert_mahasiswa($arrayData);
@@ -51,13 +51,13 @@ class MahasiswaController extends CI_Controller
         if ($data == FALSE){
             return $this->response([
                 "error"     => true,
-                "message"   => "Gagal memasukkan data..",
+                "message"   => "Gagal memasukkan data.."
             ]);
         }
 
         return $this->response([
             "error"        => false,
-            "message"      => "Berhasil memasukan data..",
+            "message"      => "Berhasil memasukan data.."
         ]);
     }
 
@@ -69,7 +69,7 @@ class MahasiswaController extends CI_Controller
             'nama'      => $this->input->post('nama'),
             'email'     => $this->input->post('email'),
             'kelas'     => $this->input->post('kelas'),
-            'jurusan'   => $this->input->post('jurusan'),          
+            'jurusan'   => $this->input->post('jurusan')  
 
         ];
         $data = $this->MahasiswaModel->update_mahasiswa($arrayId, $arrayData);
@@ -77,14 +77,14 @@ class MahasiswaController extends CI_Controller
         if ($data == FALSE){
             return $this->response([
                 "error"     => true, 
-                "message"   => "Gagal memperbarui data..",
+                "message"   => "Gagal memperbarui data.."
     
             ]);
         }
 
         return $this->response([
             "error" => false,
-            "message"=> "Berhasil memperbarui data..",
+            "message"=> "Berhasil memperbarui data.."
         ]);
     }
 
@@ -97,13 +97,13 @@ class MahasiswaController extends CI_Controller
         if ($data == FALSE){
             return $this->response([
                 "error"     => true,
-                "message"   => "Gagal menghapus data..",
+                "message"   => "Gagal menghapus data.."
             ]);
         }
 
         return $this ->response([
             "error"     => false, 
-            "message"   => "Berhasil menghapus data..",
+            "message"   => "Berhasil menghapus data.."
         ]);
     }
 
