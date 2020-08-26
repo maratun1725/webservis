@@ -10,7 +10,7 @@ class MahasiswaController extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model ('MahasiswaModel');
+        $this->load->model('MahasiswaModel');
     }
 
 
@@ -43,7 +43,7 @@ class MahasiswaController extends CI_Controller
                         'nama'      => $this->input->post('nama'),
                         'email'     => $this->input->post('email'),
                         'kelas'     => $this->input->post('kelas'),
-                        'jurusan'   => $this->input->post('jurusan'),            
+                        'jurusan'   => $this->input->post('jurusan')         
                     ];
 
         $data = $this->MahasiswaModel->insert_mahasiswa($arrayData);
@@ -69,7 +69,7 @@ class MahasiswaController extends CI_Controller
             'nama'      => $this->input->post('nama'),
             'email'     => $this->input->post('email'),
             'kelas'     => $this->input->post('kelas'),
-            'jurusan'   => $this->input->post('jurusan'),          
+            'jurusan'   => $this->input->post('jurusan')  
 
         ];
         $data = $this->MahasiswaModel->update_mahasiswa($arrayId, $arrayData);
