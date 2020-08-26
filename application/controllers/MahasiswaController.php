@@ -51,13 +51,13 @@ class MahasiswaController extends CI_Controller
         if ($data == FALSE){
             return $this->response([
                 "error"     => true,
-                "message"   => "Gagal memasukkan data..",
+                "message"   => "Gagal memasukkan data.."
             ]);
         }
 
         return $this->response([
             "error"        => false,
-            "message"      => "Berhasil memasukan data..",
+            "message"      => "Berhasil memasukan data.."
         ]);
     }
 
@@ -77,14 +77,14 @@ class MahasiswaController extends CI_Controller
         if ($data == FALSE){
             return $this->response([
                 "error"     => true, 
-                "message"   => "Gagal memperbarui data..",
+                "message"   => "Gagal memperbarui data.."
     
             ]);
         }
 
         return $this->response([
             "error" => false,
-            "message"=> "Berhasil memperbarui data..",
+            "message"=> "Berhasil memperbarui data.."
         ]);
     }
 
@@ -97,13 +97,13 @@ class MahasiswaController extends CI_Controller
         if ($data == FALSE){
             return $this->response([
                 "error"     => true,
-                "message"   => "Gagal menghapus data..",
+                "message"   => "Gagal menghapus data.."
             ]);
         }
 
         return $this ->response([
             "error"     => false, 
-            "message"   => "Berhasil menghapus data..",
+            "message"   => "Berhasil menghapus data.."
         ]);
     }
 
