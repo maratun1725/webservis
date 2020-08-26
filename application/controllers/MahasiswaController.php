@@ -48,7 +48,6 @@ class MahasiswaController extends CI_Controller
 
         $data = $this->MahasiswaModel->insert_mahasiswa($arrayData);
 
-        //jika error
         if ($data == FALSE){
             return $this->response([
                 "error"     => true,
@@ -56,10 +55,55 @@ class MahasiswaController extends CI_Controller
             ]);
         }
 
-        //jika sukses
         return $this->response([
             "error"        => false,
             "message"      => "Berhasil memasukan data..",
+        ]);
+    }
+
+    public function update_mahasiswa()
+    {
+        $arrayId = ["id" => $this->input->post('id')];
+        $arrayData = [
+            'nim'       => $this->input->post('nim'),
+            'nama'      => $this->input->post('nama'),
+            'email'     => $this->input->post('email'),
+            'kelas'     => $this->input->post('kelas'),
+            'jurusan'   => $this->input->post('jurusan'),          
+
+        ];
+        $data = $this->MahasiswaModel->update_mahasiswa($arrayId, $arrayData);
+
+        if ($data == FALSE){
+            return $this->response([
+                "error"     => true, 
+                "message"   => "Gagal memperbarui data..",
+    
+            ]);
+        }
+
+        return $this->response([
+            "error" => false,
+            "message"=> "Berhasil memperbarui data..",
+        ]);
+    }
+
+    public function delete_mahasiswa()
+    {
+        $arrayId = ["id" => $this->input->post('id')];
+
+        $data = $this->MahasiswaModel->delete_mahasiswa($arrayId);
+
+        if ($data == FALSE){
+            return $this->response([
+                "error"     => true,
+                "message"   => "Gagal menghapus data..",
+            ]);
+        }
+
+        return $this ->response([
+            "error"     => false, 
+            "message"   => "Berhasil menghapus data..",
         ]);
     }
 
